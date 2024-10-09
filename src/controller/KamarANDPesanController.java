@@ -221,24 +221,27 @@ public class KamarANDPesanController extends Pesan implements UmumInterface, Kel
     }
 
 //    method untuk menambahkan pesan dengan parameter
-    private void tambahPesanan(String namaPengguna, String noTelp, int nomorKamar, int jumlahMalam, double totalHarga) {
+    private void tambahPesanan(String akunUser, String tanggal, String namaPengguna, String noTelp, int nomorKamar, int jumlahMalam, double totalHarga) {
         int index = getIndexPesanan();
-        setIdPemesan(this.hitungIdPemesan(index), index);
+        setIdPemesan(hitungIdPemesan(index), index);
+        setTanggal(tanggal, index);
         setKamarPesan(nomorKamar, index);
         setJumlahMalam(jumlahMalam, index);
         setTersedia("booking", index);
         setNamaPemesan(namaPengguna, index);
         setNoTelp(noTelp, index);
+        setAkunUser(akunUser, index);
         setTotalHarga(totalHarga, index);
     }
 
 //    method untuk menampilkan detail pesanan dengan parameter id pemesan
-    private void detailPesanan(String idPemesan) {
+    private void detailPesanan(String idPemesan, String akunUser) {
         int index = getIndexPesanan(idPemesan);
-        if (index == -1) {
-            System.out.println("Tidak ada pesanan dengan ID Pemesan\t: " + idPemesan);
+        if (index == -1 || !(getAkunUser(index).equals(akunUser))) {
+            System.out.println("Tidak ada pesanan dengan ID Pemesan " + idPemesan);
         } else {
             System.out.println("ID Pesanan\t: " + getIdPemesan(index));
+            System.out.println("Tanggal Pesan\t: " + getTanggal(index));
             System.out.println("Nama Pemesan\t: " + getNamaPemesan(index));
             System.out.println("Nomor Telpon\t: " + getNoTelp(index));
             System.out.println("Kamar Dipesan\t: " + getKamarPesan(index));
@@ -251,29 +254,36 @@ public class KamarANDPesanController extends Pesan implements UmumInterface, Kel
 
 //    method untuk menampilkan daftar pesanan kamar
     @Override
-    public void daftarPesanan() {
+    public void daftarPesanan(String akunUser) {
         int index = getIndexPesanan();
         System.out.println("\n\n============= Daftar Pesanan ============");
         if (index == -1) {
             System.out.println("belum ada pesanan\n");
         } else {
             for(int i = 0; i < index; ++i) {
-                System.out.println("ID Pesanan\t: " + getIdPemesan(i));
-                System.out.println("Nama Pemesan\t: " + getNamaPemesan(i));
-                System.out.println("Kamar dipesan\t: " + getKamarPesan(i));
-                System.out.println("Jumlah Malam\t: " + getJumlahMalam(i) + "\n");
+                if(getAkunUser(i).equals(akunUser)){
+                    System.out.println("ID Pesanan\t: " + getIdPemesan(i));
+                    System.out.println("Nama Pemesan\t: " + getNamaPemesan(i));
+                    System.out.println("Tanggal Pesan\t: " + getTanggal(i));
+                    System.out.println("Kamar dipesan\t: " + getKamarPesan(i));
+                    System.out.println("Jumlah Malam\t: " + getJumlahMalam(i) + "\n");
+                }
             }
         }
     }
 
 //    method untuk menampilkan dialog pesan kamar
     @Override
-    public void menuTambahPesanan() {
+    public void menuTambahPesanan(String akunUser) {
         System.out.println("\n\n=========== Pesan Kamar ==============");
         System.out.print("Pilih Nomor Kamar\t: ");
         int nomorKamar = sc.nextInt();
         int getIndexKamar = getIndexKamar(nomorKamar);
         if (validasiKamarTersedia(nomorKamar)) {
+//            untuk mecegah agar Scanner dibawahnya ke skip (didapat dari stackoverflow)
+            sc.nextLine();
+            System.out.print("Tanggal Pesan\t\t: ");
+            String tanggal = sc.nextLine();
             System.out.print("Masukan Nama Pemesan\t: ");
             String namaPemesan = sc.next();
             System.out.print("Masukan Nomor Telpon\t: ");
@@ -282,7 +292,7 @@ public class KamarANDPesanController extends Pesan implements UmumInterface, Kel
             int jumlahMalam = sc.nextInt();
             double totalHarga = hitungTotalHarga(getIndexKamar, jumlahMalam);
             System.out.println("Total Harga\t\t: " + totalHarga);
-            tambahPesanan(namaPemesan, noTelp, nomorKamar, jumlahMalam, totalHarga);
+            tambahPesanan(akunUser, tanggal, namaPemesan, noTelp, nomorKamar, jumlahMalam, totalHarga);
         } else {
             System.out.println("Kamar tidak tersedia.");
         }
@@ -290,10 +300,10 @@ public class KamarANDPesanController extends Pesan implements UmumInterface, Kel
 
 //    method untuk menampilkan dialog menu detail pesanan kamar
     @Override
-    public void menuDetailPesanan() {
+    public void menuDetailPesanan(String akunUser) {
         System.out.println("\n\n============ Detail Pesanan ============");
         System.out.print("Masukkan ID Pesanan\t: ");
         String idPemesan = sc.next();
-        detailPesanan(idPemesan);
+        detailPesanan(idPemesan, akunUser);
     }
 }

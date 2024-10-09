@@ -8,6 +8,8 @@ public class Pesan extends Kamar implements UmumInterface {
    private final String[] namaPemesan = new String[maksLen];
    private final String[] noTelp = new String[maksLen];
    private final int[] kamarPesan = new int[maksLen];
+   private final String[] akunUser = new String[maksLen];
+   private final String[] tanggal = new String[maksLen];
    private final int[] jumlahMalam = new int[maksLen];
    private final double[] totalHarga = new double[maksLen];
 
@@ -33,6 +35,13 @@ public class Pesan extends Kamar implements UmumInterface {
       return this.noTelp[index];
    }
 
+   protected void setTanggal(String tanggal, int index) {
+      this.tanggal[index] = tanggal;
+   }
+   protected String getTanggal(int index) {
+      return this.tanggal[index];
+   }
+   
    protected void setKamarPesan(int kamarPesan, int index) {
       this.kamarPesan[index] = kamarPesan;
    }
@@ -52,5 +61,12 @@ public class Pesan extends Kamar implements UmumInterface {
    }
    protected double getTotalHarga(int index) {
       return this.totalHarga[index];
+   }
+   
+   protected void setAkunUser(String akunUser, int index) {
+      this.akunUser[index] = akunUser;
+   }
+   protected String getAkunUser(int index) {
+      return this.akunUser[index];
    }
 }

@@ -3,6 +3,8 @@ import java.util.Scanner;
 import model.User;
 
 public class CustomerController extends User {
+//   menginisialisasikan variabel string getUsername untuk menyimpan nilai username
+   protected String getUsername;
 //    menginisialisasikan objek untuk fungsi input
    private final Scanner sc = new Scanner(System.in);
 //   menginisialisasikan objek untuk kelas pengaturan kamar dan pesanan hotel
@@ -20,13 +22,13 @@ public class CustomerController extends User {
          System.out.print("Silahkan pilih(1/2/3/00):");
          switch (sc.nextLine()) {
             case "1":
-               kp.menuTambahPesanan();
+               kp.menuTambahPesanan(getUsername);
                break;
             case "2":
-               kp.daftarPesanan();
+               kp.daftarPesanan(getUsername);
                break;
             case "3":
-               kp.menuDetailPesanan();
+               kp.menuDetailPesanan(getUsername);
                break;
             case "4":
                kp.daftarKamar("tersedia");

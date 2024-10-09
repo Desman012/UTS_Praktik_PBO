@@ -8,8 +8,6 @@ import java.util.Scanner;
 public class AdminController extends CustomerController implements KelolaUser {
 //    menginisialisasikan objek untuk fungsi input
    private final Scanner sc = new Scanner(System.in);
-//   menginisialisasikan variabel string getUsername untuk menyimpan nilai username
-   private String getUsername;
 
 //   method untuk mendapatkan index user kosong
    @Override
@@ -98,7 +96,8 @@ public class AdminController extends CustomerController implements KelolaUser {
     public AdminController(String username, String password, String namaPengguna, String hakAkses) {
         tambahUser(username, password, namaPengguna, hakAkses);
         tambahUser("Customer@unsika", "customer123", "Budi Raharjo", "user");
-        kp.declareKamar(1, 120000, "Kasur king size, bath tube, shower", "tersedia");
+        kp.declareKamar(1, 180000, "Kasur king size, bath tube, shower, televisi, double cabin", "tersedia");
+        kp.declareKamar(2, 120000, "Kasur Medium size, bath tube, shower, televisi, cabin", "tersedia");
     }
 
 //    memvalidasi login, untuk username dan password ada
@@ -133,6 +132,7 @@ public class AdminController extends CustomerController implements KelolaUser {
 //   method untuk menampilkan dailog tambah akun user
    @Override
     public void menuTambahUser() {
+        String hakAkses;
         System.out.println("\n\n============ Tambah User ============");
         System.out.print("Masukan Username\t: ");
         String username = sc.next();
@@ -141,10 +141,23 @@ public class AdminController extends CustomerController implements KelolaUser {
             String password = sc.next();
             System.out.print("Masukan Nama Pengguna\t: ");
             String namaPengguna = sc.next();
-            System.out.print("Masukan Hak Akses\t: ");
-            String hakAkses = sc.next();
+            System.out.println("\nDaftar hak akses:");
+            System.out.println("1. admin");
+            System.out.println("2. customer");
+            System.out.print("Silahkan pilih (1/2) : ");
+            switch (sc.next()) {
+                case "1":
+                    hakAkses = "admin";
+                    break;
+                case "2":
+                    hakAkses = "customer";
+                    break;
+                default:
+                    System.out.println("\nError tidak ada pilihan\n");
+                    return;
+            }
             tambahUser(username, password, namaPengguna, hakAkses);
-            System.out.println("Data sudah ditambahkan\n\n");
+            System.out.println("\nData sudah ditambahkan\n\n");
         } else {
             System.out.println("Username sudah ada\n\n");
         }

@@ -52,6 +52,7 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
      - `AdminController.java` berfungsi untuk mengelola tampilan output dan input serta fungsi atau fitur untuk role admin
      - `CustomerController.java` berfungsi untuk mengelola tampilan output dan input serta fungsi atau fitur untuk role user
      - `KamarANDPesanController.java` berfungsi untuk mengelola tampilan output dan input serta fungsi atau fitur yang berkenaan dengan pengelolaan kamar dan pesanan.
+  
   3. interfacex
      Berisikan file java atau interface yang berisikan method-method yang akan dipanggil (implements) oleh kelas lain. Terdapat beberapa file interface java, yaitu:
      - `KelolaKamar.java` adalah interface yang berisikan method abstract untuk mengelola kamar, yaitu tambah, hapus, ubah dan daftar kelas
