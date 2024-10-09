@@ -15,7 +15,7 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
      - **Username : Customer@unsika**
      - **Password : customer123**
     
-## Fitur Aplikasi 
+## Fitur aplikasi 
 - Role Admin:
   - Dapat mengelola akun customer/admin:
     - Menambahkan akun (Admin/customer)
@@ -101,7 +101,7 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
 ### Penambahan keyword:
 Ada beberapa penambahan yang saya lakukan, yang belum diperlajari atau tidak perlajari baik itu keyword atau fungsi, yaitu:
 - `.equals(val)` berfungsi untuk membanding kedua variable dengan tipe data String, dimana fungsinya sama dengan operator pembanding `==`
-- Penggunaan tipe data array. di program ini saya menggunakan inisialisasi array yaitu
+- Penggunaan tipe data array di program ini saya menggunakan inisialisasi array yaitu
   `tipe_data [] nama_variable = new tipe_data [panjang_array];`
   
 ## Kekurangan aplikasi
