@@ -1,29 +1,31 @@
 # Aplikasi Reservasi Hotel berbasis CLI
 Aplikasi ini dibuat untuk memenuhi tugas uts praktik Mata Kuliah Pemrograman Berorientasi Objek (PBO).
 Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan berbasis terminal (CLI).
-Adapun sudut pandang pembuatan aplikasi ini, yaitu:
-- Aplikasi ini digunakan oleh repsesionis untuk mendata pemesan kamar hotel
-- Aplikasi ini memiliki dua role yaitu, admin dan user. Untuk pembuatan akun sepenuhnya hanya bisa dilakukan oleh role admin, sehingga akun user sudah dibuat oleh admin.
+- Aplikasi ini memiliki dua role yaitu, admin dan user. Untuk pembuatan akun sepenuhnya hanya bisa dilakukan oleh role admin, sehingga akun customer sudah dibuat oleh admin yang berarti akun customer tidak bisa register sendiri.
+- Role admin digunakan oleh repsesionis hotel.
 ## Fitur Aplikasi 
 - Role Admin:
-  - Dapat mengelola akun user/admin:
-    - Menambahkan akun (Admin/User)
-    - Mengubah akun (Admin/User)
-    - Menghapus akun (Admin/User)
+  - Dapat mengelola akun customer/admin:
+    - Menambahkan akun (Admin/customer)
+    - Mengubah akun (Admin/customer)
+    - Menghapus akun (Admin/customer)
     - Melihat daftar akun
   - Dapat mengelola data kamar:
     - Menambahkan data kamar
     - Mengubah data kamar
     - Menghapus data kamar
     - Melihat daftar data kamar
-- Role User:
+- Role Customer:
   - Melakukan pesan kamar
-  - Melihat daftar pesanan
+  - Melihat histori pesanan
   - Melihat kamar yang tersedia
-  - Melihat detail pesanan
+  - Melihat histori detail pesanan
 ## Struktur direktori file:
 ```
 📦UTS_Praktik_PBO
+ ┣ 📂build
+ ┃ ┗ 📂classes
+ ┣ 📂nbproject
  ┣ 📂src
  ┃ ┣ 📂controller
  ┃ ┃ ┣ 📜AdminController.java
@@ -55,9 +57,23 @@ Adapun sudut pandang pembuatan aplikasi ini, yaitu:
      - `KelolaKamar.java` adalah interface yang berisikan method abstract untuk mengelola kamar, yaitu tambah, hapus, ubah dan daftar kelas
      - `KelolaPesanan.java` adalah interface yang berisikan method abstract untuk mengelola pesanan, yaitu tambah, hapus, ubah dan daftar pesanan
      - `KelolaUser.java` adalah interface yang berisikan method abstract untuk mengelola user, yaitu tambah, hapus, ubah dan daftar user
-     - `UmumInterface.java` adalah interface yang berisikan variabel yang bisa digunakan untuk ke semua kelas, dalam project ini yaitu mendefinisikan panjang array dengan nama variabel maksLen
+     - `UmumInterface.java` adalah interface yang berisikan variabel dan method yang bisa digunakan untuk ke semua kelas, dalam project ini yaitu mendefinisikan panjang array dengan nama variabel maksLen
   5. main
      Berisikan file atau kelas java untuk dijalankan (main program).
   7. model
-     Berisikan file java atau kelas yang berfungsi untuk menangani penyimpanan data dengan menggunakan method setter getter
+     Berisikan file java atau kelas yang berfungsi untuk menangani penyimpanan data dengan menggunakan method setter getter. 
+## Teknologi yang dipakai
+- Java JDK 18
+- Apache Netbeans IDE 14
+### Require list Tugas
+[x] Menggunakan class, object, variable dan method
+[x] Menggunakan tipe data, paramater, argument, dan konstruktor
+[x] Mengelompokkan ke beberapa package
+[x] Menggunakan konsep enkapsulasi (public, private, protected)
+[x] Menggunakan konsep polymorphism (konsep overload, dan override)
+[x] Menggunakan konsep abstrak (interface)
+[x] Menggunakan struktur kontrol percabangan (if, if-else, switch)
+[x] Menggunakan struktur kontrol perulangan (while, for)
+[x] Menggunakan library `java.util.Scanner` untuk fungsi input 
+
 
