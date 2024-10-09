@@ -71,7 +71,7 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
      - `KelolaKamar.java` adalah interface yang berisikan method abstract untuk mengelola kamar, yaitu tambah, hapus, ubah dan daftar kelas
      - `KelolaPesanan.java` adalah interface yang berisikan method abstract untuk mengelola pesanan, yaitu tambah, hapus, ubah dan daftar pesanan
      - `KelolaUser.java` adalah interface yang berisikan method abstract untuk mengelola user, yaitu tambah, hapus, ubah dan daftar user
-     - `UmumInterface.java` adalah interface yang berisikan variabel dan method yang bisa digunakan untuk ke semua kelas, dalam project ini yaitu mendefinisikan panjang array dengan nama variabel maksLen
+     - `UmumInterface.java` adalah interface yang berisikan variabel dan method yang bisa digunakan untuk ke semua kelas, dalam project ini yaitu mendefinisikan panjang array dengan nama variabel `maksLen`
       
   4. main
      Berisikan file atau kelas java untuk dijalankan (main program).
@@ -101,7 +101,8 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
 ### Penambahan keyword:
 Ada beberapa penambahan yang saya lakukan, yang belum diperlajari atau tidak perlajari baik itu keyword atau fungsi, yaitu:
 - `.equals(val)` berfungsi untuk membanding kedua variable dengan tipe data String, dimana fungsinya sama dengan operator pembanding `==`
-- Penggunaan tipe data array. di program ini saya menggunakan inisialisasi array yaitu `tipe_data [] nama_variable = new tipe_data [panjang_array];`
+- Penggunaan tipe data array. di program ini saya menggunakan inisialisasi array yaitu
+  `tipe_data [] nama_variable = new tipe_data [panjang_array];`
   
 ## Kekurangan aplikasi
 - belum ada validasi input
