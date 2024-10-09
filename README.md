@@ -1,7 +1,7 @@
 # Aplikasi Reservasi Hotel berbasis CLI
 Aplikasi ini dibuat untuk memenuhi tugas uts praktik Mata Kuliah Pemrograman Berorientasi Objek (PBO).
 Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan berbasis terminal (CLI).
-- Aplikasi ini memiliki dua role yaitu, admin dan user. Untuk pembuatan akun sepenuhnya hanya bisa dilakukan oleh role admin, sehingga akun customer sudah dibuat oleh admin yang berarti akun customer tidak bisa register sendiri.
+- Aplikasi ini memiliki dua role yaitu, admin dan customer. Untuk pembuatan akun sepenuhnya hanya bisa dilakukan oleh role admin, sehingga akun customer sudah dibuat oleh admin yang berarti akun customer tidak bisa register sendiri.
 - Role admin digunakan oleh repsesionis hotel.
 ## Fitur Aplikasi 
 - Role Admin:
@@ -58,22 +58,28 @@ Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java dengan tampilan b
      - `KelolaPesanan.java` adalah interface yang berisikan method abstract untuk mengelola pesanan, yaitu tambah, hapus, ubah dan daftar pesanan
      - `KelolaUser.java` adalah interface yang berisikan method abstract untuk mengelola user, yaitu tambah, hapus, ubah dan daftar user
      - `UmumInterface.java` adalah interface yang berisikan variabel dan method yang bisa digunakan untuk ke semua kelas, dalam project ini yaitu mendefinisikan panjang array dengan nama variabel maksLen
-  5. main
+  4. main
      Berisikan file atau kelas java untuk dijalankan (main program).
-  7. model
-     Berisikan file java atau kelas yang berfungsi untuk menangani penyimpanan data dengan menggunakan method setter getter. 
+  5. model
+     Berisikan file java atau kelas yang berfungsi untuk menangani penyimpanan data dengan menggunakan method setter getter. Terdapat beberapa file kelas java, yaitu:
+     - `Kamar.java` adalah file kelas java untuk menangani pemnyimpanan dan mendapatkan data kamar, dengan menggunakan method setter getter
+     - `Pesan.java` adalah file kelas java untuk menangani pemnyimpanan dan mendapatkan data pesanan, dengan menggunakan method setter getter
+     - `User.java` adalah file kelas java untuk menangani pemnyimpanan dan mendapatkan data user, dengan menggunakan method setter getter
 ## Teknologi yang dipakai
 - Java JDK 18
 - Apache Netbeans IDE 14
 ### Require list Tugas
-[x] Menggunakan class, object, variable dan method
-[x] Menggunakan tipe data, paramater, argument, dan konstruktor
-[x] Mengelompokkan ke beberapa package
-[x] Menggunakan konsep enkapsulasi (public, private, protected)
-[x] Menggunakan konsep polymorphism (konsep overload, dan override)
-[x] Menggunakan konsep abstrak (interface)
-[x] Menggunakan struktur kontrol percabangan (if, if-else, switch)
-[x] Menggunakan struktur kontrol perulangan (while, for)
-[x] Menggunakan library `java.util.Scanner` untuk fungsi input 
+- [x] Menggunakan class, object, variable dan method
+- [x] Menggunakan tipe data, paramater, argument, dan konstruktor
+- [x] Mengelompokkan ke beberapa package
+- [x] Menggunakan konsep enkapsulasi (public, private, protected)
+- [x] Menggunakan konsep polymorphism (konsep overload, dan override)
+- [x] Menggunakan konsep abstrak (interface)
+- [x] Menggunakan struktur kontrol percabangan (if, if-else, switch)
+- [x] Menggunakan struktur kontrol perulangan (while, for)
+- [x] Menggunakan library `java.util.Scanner` untuk fungsi input
+## Kekurangan aplikasi
+- belum ada validasi input
+- customer/user belum bisa membuat akunnya sendiri
 
 
