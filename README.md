@@ -22,10 +22,12 @@ Adapun sudut pandang pembuatan aplikasi ini, yaitu:
   - Melihat kamar yang tersedia
   - Melihat detail pesanan
 ## Struktur direktori file:
+```
 |- Src
 |  |- controller
 |  |  |- AdminController.java
 |  |  |- CustomerController.java
+```
 - Nama package:
   1. model
      Berisikan file java atau kelas yang berfungsi untuk
