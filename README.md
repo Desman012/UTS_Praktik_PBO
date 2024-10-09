@@ -21,7 +21,6 @@ Adapun sudut pandang pembuatan aplikasi ini, yaitu:
   - Melihat daftar pesanan
   - Melihat kamar yang tersedia
   - Melihat detail pesanan
-<br>
 ## Struktur direktori file:
 |- Src
 |  |- controller
